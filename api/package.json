@@ -1,0 +1,35 @@
+{
+  "name": "chatbot-promtior-challenge-api",
+  "version": "1.0.0",
+  "description": "API for chatbot promtior challenge",
+  "main": "server.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts",
+    "start": "node src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/community": "^0.3.42",
+    "@langchain/core": "^0.2.0",
+    "@langchain/ollama": "^0.2.0",
+    "@langchain/openai": "^0.2.0",
+    "@langchain/pinecone": "^0.2.0",
+    "@pinecone-database/pinecone": "^5.1.2",
+    "cheerio": "^1.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "langchain": "^0.2.0",
+    "pdf-parse": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.17",
+    "@types/pdf-parse": "^1.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
