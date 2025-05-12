@@ -1,8 +1,8 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 
-export async function getPdfFromUrl({ url }: { url: string }) {
+export async function getPdfFromUrl({ path }: { path: string }) {
   try {
-    const loader = new PDFLoader(url);
+    const loader = new PDFLoader(path);
     const docs = await loader.load();
     return docs
   } catch (error) {

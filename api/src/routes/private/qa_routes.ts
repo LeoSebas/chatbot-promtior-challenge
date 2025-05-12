@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { configureRagChain } from "../../chains/rag_chain";
-import { createVectorStore } from "../../vector_store";
+import { getVectorStore } from "../../vector_store";
 import { index } from "../../vector_store/pinecone";
 
 const qaRoutes = (mainRouter: Router) => {
@@ -12,15 +12,14 @@ const qaRoutes = (mainRouter: Router) => {
         const { question } = req.body;
         console.log(question);
 
-        const vs = await createVectorStore({ pineconeIndex: index, });
+        const vs = await getVectorStore({ pineconeIndex: index });
         console.log('vs created');
-        const docs = await vs.similaritySearch(question, 3);
+        const docs = await vs.similaritySearch(question, 20);
         console.log('docs created');
 
         const chain = await configureRagChain();
         const answer = await chain.invoke({
             input: question,
-            context: docs,
         });
 
         res.status(200).json({ message: "OK", answer: answer.answer });

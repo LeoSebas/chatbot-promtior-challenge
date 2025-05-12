@@ -12,6 +12,9 @@ const config = {
     },
     openai: {
         apiKey: process.env.OPENAI_API_KEY!,
+    },
+    sources: {
+        pdf: process.env.DATA_PDF_URL!,
     }
 }
 
