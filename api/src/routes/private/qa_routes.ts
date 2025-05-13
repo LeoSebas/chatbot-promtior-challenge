@@ -22,7 +22,7 @@ const qaRoutes = (mainRouter: Router) => {
             input: question,
         });
 
-        res.status(200).json({ message: "OK", answer: answer.answer });
+        res.status(200).json({ message: "OK", response: answer.answer });
     });
 }
 
