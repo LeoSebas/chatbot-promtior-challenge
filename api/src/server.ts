@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "http://localhost:8080",
-  methods: ["GET", "POST"],
+  origin: config.frontend.host,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 }));
 
 app.use(express.urlencoded({ extended: true }));
