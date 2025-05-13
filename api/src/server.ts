@@ -1,14 +1,14 @@
-import express from "express";
 import cors from "cors";
-import publicRoutes from "./routes/public";
-import privateRoutes from "./routes/private";
+import express from "express";
 import config from "./config";
+import privateRoutes from "./routes/private";
+import publicRoutes from "./routes/public";
 const app = express();
 
 app.use(express.json());
 
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: "http://localhost:8080",
   methods: ["GET", "POST"],
 }));
 
