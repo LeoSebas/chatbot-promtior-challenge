@@ -15,6 +15,9 @@ const config = {
     },
     sources: {
         pdf: process.env.DATA_PDF_URL!,
+    },
+    frontend: {
+        host: process.env.WEB_APP_URL!,
     }
 }
 
